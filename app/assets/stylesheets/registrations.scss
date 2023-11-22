@@ -1,0 +1,98 @@
+header {
+  background-color: rgb(136, 204, 243);
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  box-shadow: #3b3939;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.system-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin-top: 5vh;
+}
+
+#center-container {
+  text-align: center;
+}
+
+.input-title {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#nickname-input-container {
+  margin-top: 20px;
+}
+
+label {
+  font-size: 16px;
+  display: block;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px; /* 余白の調整 */
+}
+
+#next-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 70px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin-top: 10px; /* ボタンの位置調整 */
+}
+
+#next-button:hover {
+  background-color: #2980b9;
+}
+
+.new-registration a {
+  font-size: 20px;
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+ /* 入力フォームの横幅を拡張します。 */
+input[type="email"],
+label {
+display: block; /* ラベルをブロック要素にします。 */
+text-align: left;
+margin-bottom: 5px; /* ラベルと入力フォームの間の余白 */
+margin-top: 10px; /* ラベルと前の入力フォームの間の余白 */
+}
+
+/* 入力フォームの横幅を拡張し、左寄せにします。 */
+input[type="email"],
+input[type="password"] {
+width: 200%; /* この値は、希望の横幅に応じて調整してください。 */
+max-width: 400px; /* フォームの最大横幅を設定、または必要に応じて調整してください。 */
+/* ...他のスタイル属性... */
+}
