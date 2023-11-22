@@ -13,4 +13,6 @@
  *= require_tree .
  *= require_self
  */
+@import '_forms';
 @import 'registrations';
+@import 'sessions';
