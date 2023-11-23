@@ -16,23 +16,26 @@ header {
   font-weight: bold;
 }
 
-main {
+#center-container {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  min-height: 100vh;
   height: 100vh;
   margin-top: 5vh;
 }
 
-#center-container {
-  text-align: center;
+.form-container {
+  display: flex;
+  flex-direction: column; /* 子要素を縦に並べます */
+  align-items: center; /* 子要素を中央揃えにします */
+  width: 400px; /* フォームの幅を適宜調整 */
 }
 
 .input-title {
   font-size: 35px;
   font-weight: bold;
-  margin: 0;
+  margin: 20px 0; /* タイトルの上下のマージンを調整 */
 }
 
 #nickname-input-container {
@@ -89,10 +92,9 @@ margin-bottom: 5px; /* ラベルと入力フォームの間の余白 */
 margin-top: 10px; /* ラベルと前の入力フォームの間の余白 */
 }
 
-/* 入力フォームの横幅を拡張し、左寄せにします。 */
 input[type="email"],
 input[type="password"] {
-width: 200%; /* この値は、希望の横幅に応じて調整してください。 */
-max-width: 400px; /* フォームの最大横幅を設定、または必要に応じて調整してください。 */
-/* ...他のスタイル属性... */
+  width: 300%; /* フォームの幅をform-containerに合わせる */
+  max-width: 400px; /* 最大幅もform-containerに合わせる */
+  /* ...他のスタイル属性... */
 }

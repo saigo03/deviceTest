@@ -12,23 +12,14 @@
 <body>
 
     <div id="app">
-        <!-- ヘッダー -->
-        <header>
-            <div class="header-container">
-                <div class="system-name">Rise note</div>
-                <div class="header-buttons">
-                    <button @click="goToTop">Top</button>
-                    <%# ログイン、ログアウト処理 %>
-                    <% if user_signed_in? %>
-                      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-                    <% else %>
-                      <%= link_to 'Login', new_user_session_path %>
-                    <% end %>
-                </div>
-            </div>
-        </header>
-
         <!-- メインコンテンツ -->
+        <%# ログイン、ログアウト処理 %>
+        <% if user_signed_in? %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to 'Login', new_user_session_path %>
+        <% end %>
+        
         <main>
             <div class="gazou"><img src="プロフィール画像.png" width="150"></div>
             <div class="raizu">
