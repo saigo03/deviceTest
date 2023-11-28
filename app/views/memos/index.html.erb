@@ -1,0 +1,23 @@
+<h1>メモ一覧</h1>
+
+<p><%= link_to "メモ作成", new_memo_path %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>作成時間</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @memos.each do |memo| %>
+      <tr>
+        <td><%= memo.id %></td>
+        <td><%= memo.title %></td>
+        <td><%= memo.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= link_to '編集', edit_memo_path(memo) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

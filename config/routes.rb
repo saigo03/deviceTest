@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   }
 
   root to: 'home#index'
+    # Memosに関連するルートを追加
+  resources :memos
   get 'registration_complete', to: 'static_pages#registration_complete', as: 'registration_complete'
   get 'hello_index', to: 'hello#index', as: 'hello_index'
 
-  # Memosに関連するルートを追加
-  resources :memos
+
 end

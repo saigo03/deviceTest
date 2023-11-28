@@ -1,0 +1,12 @@
+<h1><%= @memo.title %></h1>
+<p><%= @memo.content %></p>
+<p>ユーザーID: <%= @memo.user.id%></p>
+<p>メールアドレス: <%= @memo.user.email %></p>
+<p>投稿時間: <%= @memo.created_at.strftime("%Y年%m月%d日 %H:%M") %></p>
+<p><%= link_to 'メモ一覧へ', memos_path %><p>
+        <%# ログイン、ログアウト処理 %>
+        <% if user_signed_in? %>
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to 'Login', new_user_session_path %>
+        <% end %>
