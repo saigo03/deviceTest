@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rise Note App</title>
-    <!-- Vue.js CDNを追加 -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-</head>
-
-<body>
-
-    <div id="app">
-        <!-- メインコンテンツ -->
-        <%# ログイン、ログアウト処理 %>
-        <% if user_signed_in? %>
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        <% else %>
-            <%= link_to 'Login', new_user_session_path %>
-        <% end %>
-        
-        <main>
             <div class="gazou"><img src="プロフィール画像.png" width="150"></div>
             <div class="raizu">
               <% if user_signed_in? %>
@@ -37,69 +14,8 @@
                 <p><%= link_to "メモを作成", memos_path %>
             </div>
 
-            <!-- アカウント削除確認ダイアログ -->
-            <div v-if="accountDeleteFlag" class="overlay">
-                <div class="button-template-container">
-                <div class="text1">
-                    <p>{{ confirmationMessage }}</p>
-                </div>
-                <p v-if="showNoteMessage">アカウントを削除すると、全てのノートも削除されます。</p>
-                <div class="button-container">
-                    <div class="aka"><button @click="confirmAccountDelete">{{ confirmButtonText }}</button></div>
-                    <div class="ao"><button @click="cancelAccountDelete">いいえ</button></div>
-                </div>
-            </div>
-        </main>
-    </div>
-
     <style>
-        html,body{
-            overflow: hidden;
-            margin:0;
-        }
-
-        header {
-            background-color: rgb(136, 204, 243);
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            box-shadow: #3b3939;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .system-name {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        
-        .header-buttons {
-            display: flex;
-        }
-        
-        .header-buttons button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: underline; /* 下線を追加 */
-            color: #000000;
-            padding: 0;
-            margin-left: 10px;
-        }
-        
-        .header-buttons button:hover {
-            color: #555;
-        }
-
-        
-        main {
-            margin-top: 50px; /* ヘッダーの分だけ下にずらす */
-        }
-
+  
         .henkouSakuzyo{
             height:50vw;
         }
@@ -237,42 +153,3 @@
             align-items: center;
         }
     </style>
-
-    <!-- Vue.jsの処理 -->
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                accountDeleteFlag: false,
-                confirmationMessage: "アカウントを削除しますか？",
-                showNoteMessage: true,
-                confirmButtonText: "はい",
-            },
-            methods: {
-                accountDelete() {
-                    this.accountDeleteFlag = true;
-                },
-                confirmAccountDelete() {
-                    // アカウント削除の具体的なロジックをここに追加してください
-                    console.log("アカウントが削除されました！");
-                    this.confirmationMessage = "本当にアカウントを削除しますか？";
-                    this.showNoteMessage = false;
-                    this.confirmButtonText = "削除";
-                },
-                cancelAccountDelete() {
-                    this.accountDeleteFlag = false;
-                    this.confirmationMessage = "アカウントを削除しますか？";
-                    this.showNoteMessage = true;
-                    this.confirmButtonText = "はい";
-                },
-                goToTop() {
-                    // Topへの遷移の処理を実装
-                    console.log("Topへ移動");
-                },
-            },
-        });
-    </script>
-
-</body>
-
-</html>

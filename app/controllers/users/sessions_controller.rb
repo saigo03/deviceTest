@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
   # ログインフォームのオーバーライド
   def after_sign_in_path_for(resource)
     # ログインフォームのボタンを入力後に遷移するページを指定
-    hello_index_path
+    mypage_path
   end
 
   # GET /resource/sign_in
