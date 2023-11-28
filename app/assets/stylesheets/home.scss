@@ -1,26 +1,157 @@
-#home-container {
-  display: flex;          /* Flexboxを有効にする */
-  flex-direction: column; /* 子要素を縦方向に並べる */
-  justify-content: flex-start; /* 上端から内容を開始する */
-  align-items: center;     /* 子要素を水平方向の中央に配置 */
-  height: 100vh;           /* ビューポートの高さに合わせる */
-}
+// #home-container {
+//   display: flex;          /* Flexboxを有効にする */
+//   flex-direction: column; /* 子要素を縦方向に並べる */
+//   justify-content: flex-start; /* 上端から内容を開始する */
+//   align-items: center;     /* 子要素を水平方向の中央に配置 */
+//   height: 100vh;           /* ビューポートの高さに合わせる */
+// }
 
-.home-title-container {
-  text-align: center; /* 中央揃えにする */
-  margin-top: 20vh;   /* 画面の上部からのスペースを空ける */
-}
+// .home-title-container {
+//   text-align: center; /* 中央揃えにする */
+//   margin-top: 20vh;   /* 画面の上部からのスペースを空ける */
+// }
 
-.next_new_user_button{
-  background-color: #3498db;
-  color: #fff;
-  padding: 7px 30px;
-  font-size: 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display: block;
+// .next_new_user_button{
+//   background-color: #3498db;
+//   color: #fff;
+//   padding: 7px 30px;
+//   font-size: 20px;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   display: block;
 
-}
+// }
 
 /* レスポンシブ対応や他のスタイリングが必要な場合は、追加でCSSをここに書く */
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+
+.home-body {
+background-image: url(/assets/root_home.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat; /* 画像の繰り返しを防ぐための設定 */
+height: 600px;
+}
+
+/* ロゴ */
+header .system-name {
+padding: 0 20px;
+font-size: 18px;
+color: #fff;
+letter-spacing: .2em;
+}
+#fixed-header {
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+}
+.header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.header-buttons {
+display: flex;
+align-items: center;
+}
+.header-buttons a {
+font-weight:bold;
+position: relative;
+display: inline-block;
+transition: .3s;
+text-decoration: none;
+color:#fff;
+margin-right: 20px;
+}
+.header-buttons a::after {
+position: absolute;
+bottom: 20px;
+left: 0;
+content: '';
+width: 0;
+height: 1px;/*下線の太さ*/
+background-color:rgb(249, 212, 112);/*下線の色*/
+transition: .3s;
+}
+.header-buttons a:hover::after {
+width: 100%;
+}
+.header-buttons a:hover{
+color:rgb(249, 212, 112);/*ホバー時の文字色*/
+}
+
+.home-input-container {
+  text-align: center; /* 中央揃え */
+  padding-top: 130px;
+}
+.input-title {
+  font-size: 60px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #d9d8d8;
+  font-weight:bold;
+}
+h2.input-title::before {
+  content: "Use it freely";
+  display: block;
+  font-size: 16px;
+  margin-bottom: -5px;
+  color: #d9d8d8;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+  margin-left: -290px; /* 入力欄を右に移動 */
+}
+
+#nickname-input {
+  width: 130%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+.start-button a {
+background-color: #d9d8d8;
+border-radius: 50px;
+position: relative;
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin: 0 auto;
+max-width: 260px;
+padding: 10px 25px;
+color: #313131;
+transition: 0.3s ease-in-out;
+font-weight: 500;
+text-decoration: none;
+}
+.start-button a:hover {
+background: #5e5d5d;
+color: #FFF;
+}
+.start-button a:after {
+content: '';
+width: 5px;
+height: 5px;
+border-top: 3px solid #313131;
+border-right: 3px solid #313131;
+transform: rotate(45deg) translateY(-50%);
+position: absolute;
+top: 50%;
+right: 20px;
+border-radius: 1px;
+transition: 0.3s ease-in-out;
+}
+.start-button a:hover:after {
+border-color: #FFF;
+}
