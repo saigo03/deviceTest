@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get 'hello_index', to: 'hello#index', as: 'hello_index'
   get 'mypage', to: 'static_pages#'
 
+  # タグに関連するルートを追加
+  resources :tags, only: [:new, :create]
 
 end
