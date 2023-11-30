@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_29_051013) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_30_014011) do
   create_table "memos", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title"
@@ -18,6 +18,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_29_051013) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_memos_on_user_id"
+  end
+
+  create_table "memos_tags", id: false, force: :cascade do |t|
+    t.integer "memo_id", null: false
+    t.integer "tag_id", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

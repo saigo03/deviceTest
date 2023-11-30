@@ -1,6 +1,15 @@
 class MemosController < ApplicationController
   def index
-    @memos = current_user.memos
+    if params[:tag_id].present?
+      # 単一のタグIDに基づいてメモをフィルタリング
+      @memos = Memo.joins(:tags).where(tags: { id: params[:tag_id] }).distinct
+    elsif params[:search].present?
+      # テキストでの検索
+      @memos = current_user.memos.where("title LIKE ?", "%#{params[:search]}%")
+    else
+      # すべてのメモを表示
+      @memos = current_user.memos
+    end
   end
 
   def show
@@ -19,6 +28,7 @@ class MemosController < ApplicationController
       render :new
     end
   end
+
 
   def edit
     @memo = Memo.find(params[:id])
@@ -42,6 +52,6 @@ class MemosController < ApplicationController
   private
 
   def memo_params
-    params.require(:memo).permit(:title, :content)
+    params.require(:memo).permit(:title, :content, tag_ids: [])
   end
 end
