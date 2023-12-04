@@ -1,0 +1,33 @@
+<%= form_with(model: @tag, local: true) do |form| %>
+  <% if @tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+        <% @tag.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h1>タグ管理</h1>
+
+  <h2>現在のタグ一覧</h2>
+    <ul>
+      <% @tags.each do |tag| %>
+        <li><%= tag.name %></li>
+      <% end %>
+    </ul>
+
+  <%# タグ名フォーム %>
+  <div class="field">
+    <%= form.label :name%>タグ名
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+   <%= link_to 'マイページへ', mypage_path %>
+<% end %>
