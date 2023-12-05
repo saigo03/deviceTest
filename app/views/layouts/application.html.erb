@@ -7,21 +7,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
   </head>
+  <body>
 
   <header>
       <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
       <%= javascript_importmap_tags %>
       <div class="header-container">
-      <div class="system-name">Rise note</div> 
+      <div class="system-name">❍Rise note</div> 
         <%# ログイン、ログアウト処理 %>
   <% if user_signed_in? %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
   <% else %>
-      <%= link_to 'Login', new_user_session_path %>
+  <div class="header-buttons">
+      <%= link_to 'Login', new_user_session_path  %>
+  </div>
+  </div>
   <% end %>
   </header>
 
-  <body>
+  
     <%= yield %>
   </body>
+ 
 </html>
