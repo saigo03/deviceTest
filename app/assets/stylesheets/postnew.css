@@ -1,0 +1,46 @@
+.my-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.my-form h3 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.my-form div {
+  margin-bottom: 1em;
+}
+
+.my-form label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.my-form input[type="text"],
+.my-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+/* CSS to style the submit button */
+.my-button {
+  background-color: #007bff; /* Change to your preferred background color */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.my-button:hover {
+  background-color: #0056b3; /* Change to your preferred color on hover */
+}

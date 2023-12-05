@@ -1,8 +1,8 @@
-<h3>お問合せ内容が送信されました。</h3>
+<h3 class="success-message">お問合せ内容が送信されました。</h3>
 <% if @post %>
-  <h1><%= @post.title %></h1>
-  <p><%= @post.content %></p>
-  <% else %>
-    <p>お問合せ情報が見つかりまん</p>
-  <% end %>
-  <%= link_to 'マイページ', mypage_path %>
+  <h1 class="post-title"><%= @post.title %></h1>
+  <p class="post-content"><%= @post.content %></p>
+<% else %>
+  <p>お問合せ情報が見つかりません</p>
+<% end %>
+<%= link_to 'マイページ', mypage_path %>
