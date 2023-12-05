@@ -1,0 +1,34 @@
+<%# // app/views/posts/show_post.js.erb %>
+
+<%# // モーダルウィンドウを表示するためのコード %>
+$('#myModal').remove(); // モーダルウィンドウがすでに存在する場合は一旦削除する
+
+<%# // モーダルウィンドウのHTMLを追加 %>
+var modalHTML = '<div id="myModal" class="modal">';
+modalHTML += '<div class="modal-content">';
+modalHTML += '<span class="close">&times;</span>';
+modalHTML += '<%= j(render partial: "posts/post_modal", locals: { post: @post }) %>';
+modalHTML += '</div>';
+modalHTML += '</div>';
+
+$('body').append(modalHTML); <!--// モーダルウィンドウのHTMLを追加-->
+
+<%# // モーダルウィンドウを表示するための処理 %>
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName('close')[0];
+
+<%#// モーダルウィンドウをクリックしたときに閉じる処理 %>
+
+span.onclick = function() {
+  modal.style.display = 'none';
+};
+
+<%# // ウィンドウのどこかをクリックしたときにモーダルウィンドウを閉じる処理 %>
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+<%# // モーダルウィンドウを表示する処理 %>
+modal.style.display = 'block';

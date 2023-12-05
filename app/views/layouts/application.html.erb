@@ -12,6 +12,10 @@
       <%= javascript_importmap_tags %>
       <div class="header-container">
       <div class="system-name">Rise note</div> 
+
+      <!-- お問い合わせページへのリンク -->
+    <%= link_to 'お問い合わせ', new_post_path %>
+    
         <%# ログイン、ログアウト処理 %>
   <% if user_signed_in? %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete %>

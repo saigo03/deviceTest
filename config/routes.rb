@@ -11,5 +11,11 @@ Rails.application.routes.draw do
   get 'hello_index', to: 'hello#index', as: 'hello_index'
   get 'mypage', to: 'static_pages#'
 
+  #お問合せ用ルート
+  resources :posts, only: [:new, :create, :index, :show] do
+    member do
+      get 'adminshow'
+    end
+  end
 
 end
