@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   # メモとの関連付け
   has_many :memos
+  #お問合せ関連付け
+  has_many :posts
 end

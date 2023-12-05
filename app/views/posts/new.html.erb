@@ -1,0 +1,17 @@
+<h3>お問合せ</h3>
+<%= form_with model: @post, local: true, html: { class: "my-form" } do |form| %>
+<p>件名</p>
+  <div>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    お問合せ内容
+    <%= form.text_area :content %>
+  </div>
+
+
+
+  <%= form.submit "送信", class: "my-button" %>
+  <%= link_to 'マイページに戻る', mypage_path, class: "my-link" %>
+<% end %>

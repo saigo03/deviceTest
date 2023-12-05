@@ -51,7 +51,7 @@
         //"ruby.lint": { "rubocop": true },
         //"ruby.intellisense": "rubyLocate",
         "editor.tabSize": 2,
-        "editor.renderWhitespace": false,
+        "editor.renderWhitespace": "all",
         "files.associations": { "*.erb": "erb" },
         "emmet.includeLanguages": { "erb": "html" },
 

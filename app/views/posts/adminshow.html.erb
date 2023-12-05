@@ -1,0 +1,13 @@
+<!-- app/views/posts/show.html.erb -->
+<div id="postDetails">
+  <h1><%= @post.title %></h1>
+  <p><%= @post.content %></p>
+  <p>お問合せ番号 <%= @post.id %></p>
+  <% if @post.user %>
+    <p>ユーザーID: <%= @post.user.id %></p>
+    <p>ユーザーのメールアドレス: <%= @post.user.email %></p>
+  <% else %>
+    <p>投稿者情報が見つかりません。</p>
+  <% end %>
+  <%= link_to '一覧に戻る', posts_path %>
+</div>

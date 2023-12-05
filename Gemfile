@@ -14,6 +14,7 @@ gem "puma",            "5.6.5"
 gem "bootsnap",        "1.16.0", require: false
 gem "sqlite3",         "1.6.1"
 gem 'devise'
+gem 'jquery-rails'
 
 
 group :development, :test do
