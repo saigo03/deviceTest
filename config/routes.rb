@@ -17,5 +17,7 @@ Rails.application.routes.draw do
       get 'adminshow'
     end
   end
+  # タグに関連するルートを追加
+  resources :tags, only: [:new, :create]
 
 end
